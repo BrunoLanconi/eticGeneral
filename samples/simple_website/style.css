@@ -1,0 +1,25 @@
+body {
+    background-color: aliceblue;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: slategrey;
+    margin-top: 50px;
+    text-align: center;
+}
+
+p {
+    color: grey;
+    margin-top: 20px;
+    text-align: center;
+}
+
+span {
+    color: green;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
