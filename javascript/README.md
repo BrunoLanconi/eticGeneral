@@ -5,4 +5,5 @@ Este ficheiro contém documentos inerentes ao entendimento de conceitos básicos
 ## Conteúdo
 
 - `attributes.md`: Atributos básicos de JavaScript.
+- `operators.md`: Operadores básicos de JavaScript.
 - `terms.md`: Termos gerais de JavaScript.

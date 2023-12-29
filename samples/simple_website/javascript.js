@@ -1,0 +1,1 @@
+alert("Sample alert from javascript.js!");
