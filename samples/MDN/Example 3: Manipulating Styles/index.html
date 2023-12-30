@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Changing color and font-size example</title>
 
     <script>
-      function changeText() {
-        const p = document.getElementById("pid");
+        function changeText() {
+            const p = document.getElementById("pid");
 
-        p.style.color = "blue";
-        p.style.fontSize = "18pt";
-      }
+            p.style.color = "blue";
+            p.style.fontSize = "18pt";
+        }
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <p id="pid" onclick="window.location.href = 'http://www.cnn.com/';">
-      linker
+        linker
     </p>
 
     <form>
-      <p><input value="rec" type="button" onclick="changeText();" /></p>
+        <p><input value="rec" type="button" onclick="changeText();" /></p>
     </form>
-  </body>
+</body>
+
 </html>

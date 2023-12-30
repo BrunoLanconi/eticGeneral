@@ -1,35 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Modifying an image border</title>
 
     <script>
-      function setBorderWidth(width) {
-        document.getElementById("img1").style.borderWidth = width + "px";
-      }
+        function setBorderWidth(width) {
+            document.getElementById("img1").style.borderWidth = width + "px";
+        }
     </script>
-  </head>
+</head>
 
-  <body>
+<body>
     <p>
-      <img
-        id="img1"
-        src="image1.gif"
-        style="border: 5px solid green;"
-        width="100"
-        height="100"
-        alt="border test" />
+        <img id="img1" src="http://www.mozilla.org/images/mozilla-banner.gif" style="border: 5px solid green;"
+            alt="border test" />
     </p>
 
     <form name="FormName">
-      <input
-        type="button"
-        value="Make border 20px-wide"
-        onclick="setBorderWidth(20);" />
-      <input
-        type="button"
-        value="Make border 5px-wide"
-        onclick="setBorderWidth(5);" />
+        <input type="button" value="Make border 20px-wide" onclick="setBorderWidth(20);" />
+        <input type="button" value="Make border 5px-wide" onclick="setBorderWidth(5);" />
     </form>
-  </body>
+</body>
+
 </html>
