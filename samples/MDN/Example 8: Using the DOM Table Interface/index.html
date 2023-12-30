@@ -1,0 +1,20 @@
+<table id="table0">
+    <tr>
+      <td>Row 0 Cell 0</td>
+      <td>Row 0 Cell 1</td>
+    </tr>
+  </table>
+  
+  <script>
+    const table = document.getElementById("table0");
+    const row = table.insertRow(-1);
+    let cell;
+    let text;
+  
+    for (let i = 0; i < 2; i++) {
+      cell = row.insertCell(-1);
+      text = "Row " + row.rowIndex + " Cell " + i;
+      cell.appendChild(document.createTextNode(text));
+    }
+  </script>
+  
