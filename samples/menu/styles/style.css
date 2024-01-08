@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.dateText {
+    color: white;
+}
+
+.menu {
+    background-image: linear-gradient(#04427b, #001c44);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 40px;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.buttonGroup {    
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.loginButton {
+    background-color: white;
+    color: #04427b;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+}
+
+.buttonGroup .registerButton {
+    background-color: red;
+}
+
+#register-button {
+    background-color: blue;
+}
+
+.registerButton {
+    border: 1px solid white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+}
+
