@@ -1,6 +1,9 @@
 /* Variables */
+
 :root {
+    --logo: #eff5f8;
     --text: #000916;
+    --highlight: #eff5f8;
     --color-primary: #011f4b;
     --color-secondary: #03396c;
     --color-tertiary: #005b96;
@@ -10,35 +13,61 @@
     --shadow: #000916;
 }
 
+
 /* Reset */
+
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
     background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    vertical-align: baseline;
+    font-size: 1.8vw;
 }
 
 body {
     background-color: var(--background);
-    font-family: Arial, sans-serif;
+    font-family: verdana;
 }
 
+.margin {
+    padding-left: 6vw;
+    padding-right: 6vw
+}
+
+.anchor {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 40vw;
+    z-index: 998;
+    gap: 10vw;
+}
+
+/* Menu */
+
 .menu {
+    align-items: center;
+    background-color: var(--color-tertiary);
+    box-shadow: var(--color-tertiary) 2px 2px 5px;
+    display: flex;
+    justify-content: space-around;
+    min-height: 10vw;
     position: fixed;
     top: 0;
     width: 100%;
-    align-items: center;
-    background-color: var(--color-tertiary);
-    display: flex;
-    justify-content: space-between;
-    min-height: 8vw;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    box-shadow: var(--color-tertiary) 2px 2px 5px;
     z-index: 999;
+}
+
+.menu .logo {
+    color: var(--logo);
+    font-size: 3vw;
+    font-weight: bold;
 }
 
 .menu ul {
@@ -47,16 +76,57 @@ body {
 }
 
 .menu ul a {
+    border-radius: 1vw;
+    color: var(--button);
     margin: 0 10px;
-    text-decoration: none;
-    background-color: var(--button);
-    padding: 5px 20px;
-    border-radius: 5px;
-    color: var(--text);
-    box-shadow: var(--shadow) 2px 2px 5px;
+    padding: 0.5vw 2.5vw;
 }
 
-@media (max-width: 900px) {
+.highlight:hover {
+    color: var(--highlight);
+    transform: scale(1.1);
+}
+
+
+/* Profile */
+
+#profile {
+    background-color: var(--color-secondary);
+    box-shadow: var(--color-secondary) 2px 2px 5px;
+    margin-top: 10vw;
+}
+
+#profile .profile-picture {
+    background-image: url("media/profile.avif");
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    min-height: 30vw;
+    margin-bottom: 2vw;
+    outline: 2px solid var(--color-tertiary);
+    min-width: 30vw;
+}
+
+#profile .intro {
+    background-color: var(--color-tertiary);
+    border-radius: 10px;
+    padding: 3vw;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#profile .intro h2 {
+    margin-bottom: 1vw;
+}
+
+/* Skills */
+
+#skills {
+    background-color: var(--color-tertiary);
+    box-shadow: var(--color-tertiary) 2px 2px 5px;
+}
+
+/* @media (max-width: 900px) {
     .menu {
         min-height: 15vw;
     }
@@ -66,4 +136,4 @@ body {
     .menu {
         min-height: 20vw;
     }
-}
+} */
