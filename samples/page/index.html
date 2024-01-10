@@ -43,14 +43,13 @@
             <div class="skills-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt fermentum
                 tempus.</div>
             <div class="skills-set">
-                <button class="left">
-                    << /button>
-                        <img class="skill-s" />
-                        <img class="skill-m" />
-                        <img class="skill-b" />
-                        <img class="skill-m" />
-                        <img class="skill-s" />
-                        <button class="right">></button>
+                <button class="left"></button>
+                <img class="skill-s" />
+                <img class="skill-m" />
+                <img class="skill-b" />
+                <img class="skill-m" />
+                <img class="skill-s" />
+                <button class="right"></button>
             </div>
         </section>
         <section id="contact">
@@ -85,6 +84,25 @@
         <h2></h2>
         <p></p>
     </footer>
+    <script>
+        const nome = "Bruno";
+        const sobrenome = "Lanconi";
+        const sufixoMensagem = "é um T";
+
+        function concatenar(primeiraParte, segundaParte) {
+            const resultado = primeiraParte + segundaParte;
+
+            return resultado;
+        }
+
+        let mensagem;
+
+        mensagem = concatenar(nome, sobrenome);
+        mensagem = concatenar(mensagem, sufixoMensagem);
+
+        console.log(mensagem);
+
+    </script>
 </body>
 
 </html>
