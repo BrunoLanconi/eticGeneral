@@ -1,0 +1,62 @@
+/* Variables */
+
+:root {
+    --color-primary: #011f4b;
+    --color-secondary: #03396c;
+}
+
+
+/* Reset */
+
+* {
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    vertical-align: baseline;
+    font-size: 1.8vw;
+}
+
+body {
+    background-color: var(--background);
+    font-family: verdana;
+}
+
+
+/* New menu */
+
+.new-menu {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1vw;
+    padding: 1.5vw 5vw;
+    background: linear-gradient(var(--color-primary), var(--color-secondary));
+    box-shadow: var(--color-secondary) 0 0.2vw 1vw;
+}
+
+.new-menu-img {
+    background-image: url("media/profile.avif");
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 5vw;
+    width: 5vw;
+}
+
+.new-menu-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5vw
+}
+
+.new-menu-items a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--logo);
+}
