@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="menu">
+        <a href="/">
+            <h1 class="logo highlight">Jéssica Maria</h1>
+        </a>
+        <nav>
+            <ul class="menu-list">
+                <a href="#profile">
+                    <li class="menu-list-item highlight">Profile</li>
+                </a>
+                <a href="#skills">
+                    <li class="menu-list-item highlight">Skills</li>
+                </a>
+                <a href="#contact">
+                    <li class="menu-list-item highlight">Contact</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="anchor margin" id="profile">
+            <img class="profile-picture" />
+            <div class="intro">
+                <h2 class="intro-title">Lorem ipsum dolor sit amet</h2>
+                <p>Suspendisse sed massa vel ligula tincidunt sodales vitae vel risus. Morbi ac sapien vel ipsum
+                    pharetra ullamcorper at et tellus.</p>
+                <p>Integer et dolor sit amet elit porta vestibulum. Donec porttitor placerat enim in congue.
+                    Curabitur
+                    at orci nibh.</p>
+                <p>Praesent non quam arcu. Ut finibus non turpis non pulvinar. Phasellus eget ex arcu.</p>
+            </div>
+        </section>
+        <section class="anchor margin" id="skills">
+            <div class="skills-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt fermentum
+                tempus.</div>
+            <div class="skills-set">
+                <button class="left"></button>
+                <img class="skill-s" />
+                <img class="skill-m" />
+                <img class="skill-b" />
+                <img class="skill-m" />
+                <img class="skill-s" />
+                <button class="right"></button>
+            </div>
+        </section>
+        <section id="contact">
+            <div>
+                <div>
+                    <img />
+                    <h2></h2>
+                </div>
+                <div>
+                    <img />
+                    <h2></h2>
+                </div>
+                <div>
+                    <img />
+                    <h2></h2>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div>
+                    <img />
+                    <img />
+                    <img />
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h2></h2>
+        <p></p>
+    </footer>
+    <script>
+        const nome = "Bruno";
+        const sobrenome = "Lanconi";
+        const sufixoMensagem = "é um T";
+
+        function concatenar(primeiraParte, segundaParte) {
+            const resultado = primeiraParte + segundaParte;
+
+            return resultado;
+        }
+
+        let mensagem;
+
+        mensagem = concatenar(nome, sobrenome);
+        mensagem = concatenar(mensagem, sufixoMensagem);
+
+        console.log(mensagem);
+
+    </script>
+</body>
+
+</html>
