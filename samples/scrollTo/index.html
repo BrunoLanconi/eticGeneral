@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a style="cursor:pointer" onclick='myScroll("section-aliceblue")'>Scroll section-aliceblue</a>
+    <a style="cursor:pointer" onclick='myScroll("section-aqua", 40)'>Scroll section-aqua</a>
+    <a style="cursor:pointer" onclick='myScroll("blue", 80)'>Scroll blue</a>
+
+    <div id="section-aliceblue" class="sec" style="background-color:aliceblue">
+        <p>ABC</p>
+    </div>
+    <section id="section-aqua" class="sec" style="background-color:aqua">
+        <p>ABC</p>
+    </section>
+    <section id="blue" class="sec" style="background-color:blue">
+        <p>ABC</p>
+    </section>
+
+    <script>
+        function myScroll(id, difference = 0) {
+            const element = document.getElementById(id);
+            const top = element.offsetTop;
+
+            window.scrollTo(0, top - difference);
+        }
+    </script>
+</body>
+
+</html>
