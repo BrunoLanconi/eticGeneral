@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sec {
+    height: 100vh;
+    background-color: aliceblue
+}
+
+.border-div {
+    border: 5px solid red;
+    padding: 10px;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .sec {
+        background-color: red;
+    }
+
+    .border-div {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sec {
+        background-color: blue;
+    }
+
+    .border-div {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
