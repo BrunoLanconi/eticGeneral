@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            color: white;
+            background-color: black;
+            padding: 0px 10vw;
+        }
+
+        h1 {
+            text-transform: capitalize;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            width: 100%;
+            padding: 30px 0px;
+        }
+
+        .section-full-height {
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .section-blue {
+            background-color: blue;
+        }
+
+        #portfolio-imgs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .img-width-quarter {
+            width: 25%;
+        }
+
+        .centralize-children {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-button {
+            padding: 10px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+            border-radius: 50%;
+        }
+
+        .nav-button-red {
+            background-color: red;
+        }
+
+        #group-social img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #skills {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #skills .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 130px;
+            height: 130px;
+            background-color: blue;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        #skills .card-img {
+            width: 20px;
+            height: 20px;
+        }
+
+        #skills .card-description {
+            margin: 0;
+        }
+
+        #skills .card-red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Portfólio</h1>
+        <h2>Meus Projetos</h2>
+        <div class="centralize-children">
+            <img class="img-width-quarter" src="medias/01.jpeg" />
+            <img class="img-width-quarter" src="medias/01.jpeg" />
+        </div>
+        <div class="centralize-children">
+            <p class="nav-button">
+                < </p>
+                    <p class="nav-button nav-button-red">
+                        >
+                    </p>
+        </div>
+    </section>
+    <section style="display: flex; flex-direction: row; gap: 60px;">
+        <div style="display:flex; flex-direction:column; justify-content: flex-start; width: 50%;">
+            <h1>Portfólio</h1>
+            <h2>Meus Projetos</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis, dolor maximus tincidunt tincidunt,
+                risus tellus posuere neque, tincidunt cursus quam erat vel sapien.</p>
+            <div id="group-social" style="display: flex; flex-direction: row; gap: 10px;">
+                <img src="medias/facebook.png" />
+                <img src="medias/facebook.png" />
+                <img src="medias/facebook.png" />
+                <img src="medias/facebook.png" />
+            </div>
+        </div>
+        <form style="display: flex; flex-direction: column; gap: 20px; width: 50%; padding-right: 60px;">
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name" />
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+            <label for="message">Mensagem</label>
+            <textarea name="message" id="message"></textarea>
+            <input type="submit" value="Enviar" />
+        </form>
+    </section>
+    <section id="skills">
+        <div class="card">
+            <img class="card-img" src="medias/facebook.png" />
+            <p class="card-description">Programação JS</p>
+        </div>
+        <div class="card card-red">
+            <img class="card-img" src="medias/facebook.png" />
+            <p class="card-description">Programação JS</p>
+        </div>
+        <div class="card">
+            <img class="card-img" src="medias/facebook.png" />
+            <p class="card-description">Programação JS</p>
+        </div>
+        <div class="card card-red">
+            <img class="card-img" src="medias/facebook.png" />
+            <p class="card-description">Programação JS</p>
+        </div>
+    </section>
+
+</body>
+
+</html>
