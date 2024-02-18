@@ -37,3 +37,5 @@
 **top** ou **htop**: Mostra os processos em execução e o uso de recursos do sistema.
 
 **touch**: Cria um novo arquivo vazio.
+
+**whoami**: Mostra o nome do usuário atual.
