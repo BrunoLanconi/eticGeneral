@@ -7,5 +7,3 @@
 4. **Expansão Aritmética**: Se você usar a sintaxe `$((expressão))`, o Bash avaliará a expressão aritmética dentro dos parênteses duplos e retornará o resultado. Por exemplo, `$((2 * 3))` se expandirá para 6.
 
 5. **Expansão de Comandos**: Ao usar a sintaxe `$(comando)`, o Bash executará o comando entre parênteses e substituirá a expansão pelo resultado da execução desse comando. Por exemplo, `$(ls)` se expandirá para a lista de arquivos no diretório atual.
-
-Essas são apenas algumas das formas de expansão suportadas pelo Bash e por outros shells Unix-like. Cada uma tem suas próprias aplicações e pode ser combinada de várias maneiras para realizar tarefas complexas.
