@@ -20,21 +20,7 @@
    outra_string="Isso também é uma string"
    ```
 
-4. **Arquivos**: Os arquivos são criados automaticamente quando você redireciona a saída de um comando para um arquivo usando `>`, `>>` ou `|`.
-   
-   Exemplo:
-   ```bash
-   echo "Conteúdo do arquivo" > meu_arquivo.txt
-   ```
-
-5. **Diretórios**: Diretórios são criados com o comando `mkdir`.
-   
-   Exemplo:
-   ```bash
-   mkdir meu_diretorio
-   ```
-
-6. **Funções**: Funções são definidas usando a palavra-chave `function` ou simplesmente declarando o nome da função seguido por parênteses `()`.
+4. **Funções**: Funções são definidas usando a palavra-chave `function` ou simplesmente declarando o nome da função seguido por parênteses `()`.
    
    Exemplo:
    ```bash
