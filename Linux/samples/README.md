@@ -10,7 +10,7 @@ Este ficheiro contém exemplos de scripts.
 
 ## Troubleshooting
 
-Se você não conseguir referenciar um ficheiro `./handle_spammer.sh`, tente dar permissão de execução para o ficheiro:
+Se você não conseguir referenciar um ficheiro para executá-lo como a seguir: `./handle_spammer.sh`, tente dar permissão de execução para o ficheiro:
 
 ```bash
 chmod +x handle_spammer.sh
