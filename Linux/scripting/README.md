@@ -9,5 +9,6 @@ Este ficheiro contém as principais definições para scripting.
 - `basic.md`: Definições básicas para scripting.
 - `expasion.md`: Expansão de variáveis.
 - `objects.md`: Objetos em scripts.
-- `tests.md`: Condicionais em scripts.
+- `test.md`: Condicionais em scripts.
+- `test.samples.md`: Exemplos de condicionais em scripts.
 - `wildcards.md`: Uso de wildcards em scripts.
