@@ -34,7 +34,7 @@ if [ "$str1" = "$str2" ]; then
 fi
 
 # Teste de strings não nulas
-str3="OpenAI"
+str3="ETIC"
 if [ -n "$str3" ]; then
     echo "A string não é nula"
 fi
