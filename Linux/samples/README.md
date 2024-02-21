@@ -7,6 +7,7 @@ Este ficheiro contém exemplos de scripts.
 - `README.md`: Este ficheiro.
 - `dir_spammer.sh`: Script que cria uma pasta e preenche-a com ficheiros.
 - `handle_spammer.sh`: Script que manipula ficheiros.
+- `simple.sh`: Scripts simples para o formulário.
 
 ## Troubleshooting
 
