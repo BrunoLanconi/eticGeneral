@@ -10,8 +10,6 @@ else
     echo "A pasta example_folder já existe."
 fi
 
-#!/bin/bash
-
 # Verifica se o arquivo "example_file.txt" existe
 if [ ! -f "example_file.txt" ]; then
     # Cria o arquivo "example_file.txt" se não existir e escreve nele
@@ -22,8 +20,6 @@ else
     echo "Conteúdo adicional" >> example_file.txt
     echo "Conteúdo adicionado ao arquivo example_file.txt."
 fi
-
-#!/bin/bash
 
 # Verifica se o usuário atual possui permissão de escrita no arquivo "example_file.txt"
 if [ -w "example_file.txt" ]; then
