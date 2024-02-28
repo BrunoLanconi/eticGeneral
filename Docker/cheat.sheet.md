@@ -1,0 +1,38 @@
+## Comandos Docker
+
+- `docker version`: Mostra a versão do Docker.
+- `docker inspect CONTAINER_ID`: Retorna informações do contêiner.
+- `docker ps`: Mostra todos os contêineres ATIVOS.
+- `docker ps -a`: Mostra todos os contêineres.
+- `docker run IMAGE_NAME`: Cria um contêiner a partir da imagem.
+- `docker run -it IMAGE_NAME`: Cria um contêiner a partir da imagem e se conecta a ele (-it).
+- `docker run -d -P --name CONTAINER_NAME IMAGE_NAME`: Cria um contêiner a partir da imagem, dá um nome (--name) e define uma porta aleatória (-P) desanexada (-d).
+- `docker run -d -p 12345:80 IMAGE_NAME`: Cria um contêiner a partir da imagem e define uma porta específica (-P) desanexada (-d).
+- `docker run -v "VOLUME_PATH" IMAGE_NAME`: Cria um contêiner a partir da imagem e define um volume específico (-v).
+- `docker run -it --name CONTAINER_NAME --network NETWORK_NAME IMAGE_NAME`: Cria um contêiner a partir da imagem, dá um nome (--name), define uma rede (--network) e se conecta a ele (-it).
+- `docker start CONTAINER_ID`: Inicia o contêiner.
+- `docker start -a -i CONTAINER_ID`: Inicia o contêiner e se conecta a ele (-a).
+- `docker stop CONTAINER_ID`: Para o contêiner com o ID especificado.
+- `docker rm CONTAINER_ID`: Remove o contêiner com o ID especificado.
+- `docker container prune`: Remove todos os contêineres que não estão em execução.
+- `docker container logs --tail 100 CONTAINER_NAME`: Mostra os últimos 100 logs do contêiner.
+- `docker rmi IMAGE_NAME`: Remove a imagem passada como parâmetro.
+- `docker build -f DOCKERFILE_NAME`: Cria uma imagem com base em um Dockerfile fornecido (-f).
+- `docker build -f DOCKERFILE_NAME -t USERNAME/IMAGE_NAME`: Constrói e nomeia (-t) uma imagem com base em um Dockerfile fornecido (-f).
+- `docker build -f DOCKERFILE_NAME -t NOME_USUARIO/IMAGE_NAME DOCKERFILE_PATH`: Constrói e nomeia (-t) uma imagem com base em um Dockerfile fornecido (-f), apontando para o caminho do Dockerfile.
+- `docker login`: Inicia o procedimento de login no Docker Hub.
+- `docker push USERNAME/IMAGE_NAME`: Faz push de uma imagem para o Docker Hub.
+- `docker pull USERNAME/IMAGE_NAME`: Baixa uma imagem do Docker Hub.
+- `hostname -i`: Mostra o IP (-i) atribuído ao contêiner pelo Docker (só funciona dentro do contêiner).
+- `docker network create --driver bridge NETWORK_NAME`: Cria uma rede especificando o driver desejado (--driver).
+- `docker network ls`: Lista todas as redes disponíveis.
+- `docker-compose build`: Constrói todos os serviços relacionados ao arquivo docker-compose, enquanto verifica a sintaxe.
+- `docker-compose up`: Inicia todos os contêineres relacionados ao arquivo docker-compose - desde que a construção já tenha sido executada.
+- `docker-compose up --build`: Inicia todos os contêineres relacionados ao arquivo docker-compose e força a reconstrução (--build).
+- `docker-compose down`: Para todos os serviços em execução relacionados ao arquivo docker-compose.
+- `docker-compose ps`: Lista todos os contêineres em execução no momento.
+- `docker exec -it CONTAINER_NAME "pwd"`: Executa o comando "pwd" (-it) dentro do contêiner.
+- `docker exec -it container "/bin/sh"`: 'Entra' no contêiner ao executar o próprio bash.
+- `/etc/init.d/docker start`: Inicia o Docker dentro do WSL.
+- `docker rmi $(docker images -a -q)`: ⚠ Remove todas as imagens não utilizadas ⚠.
+- `docker rmi $(docker images -a -q) -f`: ⚠⚠ Remove todas as imagens ⚠⚠.
