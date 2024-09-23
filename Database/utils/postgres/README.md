@@ -3,6 +3,8 @@
 ## Commands
 
 ```bash
+connect                        Connect to the Postgres database
+clean                          Stop and remove containers
 help                           Show help
 up                             Run Postgres on port 5432 and Adminer on port 5433
 ```
@@ -10,6 +12,33 @@ up                             Run Postgres on port 5432 and Adminer on port 543
 ## [Postgres](http://localhost:5432)
 
 Postgres is a powerful, open source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads.
+
+### Connect via terminal
+
+The following command will execute `psql --username=user --dbname=db` in `db` service.
+
+```bash
+make connect
+```
+
+Then you will be able to execute SQL commands, such as:
+
+```sql
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    registration DATE NOT NULL
+);
+```
+
+Then you may validate the table creation by running:
+
+```sql
+\dt
+```
+
+or by accessing the [Adminer interface](http://localhost:5433).
+
 
 ## [Adminer](http://localhost:5433)
 

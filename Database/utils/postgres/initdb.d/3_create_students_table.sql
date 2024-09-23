@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE IF NOT EXISTS students
+(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  registration DATE NOT NULL
+);

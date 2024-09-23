@@ -4,3 +4,11 @@ help: ## Show help
 .PHONY: up
 up:  ## Run Postgres on port 5432 and Adminer on port 5433
 	docker compose up --build
+
+connect: ## Connect to the Postgres database
+	docker compose exec -it db psql --username=user --dbname=db
+	
+clean: ## Stop and remove containers
+	docker compose down
+	docker rm -f postgres-db-1
+	docker volume rm postgres_data
