@@ -42,6 +42,47 @@ DELETE FROM users WHERE name = 'John Doe';
 
 Este comando remove todos os registros que têm o campo `name` igual a "John Doe" da tabela `users`.
 
+### `SELECT FROM JOIN ON`
+
+```sql
+SELECT users.name, orders.total
+FROM users
+JOIN orders ON users.id = orders.user_id;
+```
+
+Este comando recupera o nome do usuário e o total de todas as ordens associadas a esse usuário, combinando as tabelas `users` e `orders` com base na coluna `id` da tabela `users` e na coluna `user_id` da tabela `orders`.
+
+### `SELECT FROM JOIN ON WHERE`
+
+```sql
+SELECT users.name, orders.total
+FROM users
+JOIN orders ON users.id = orders.user_id
+WHERE users.name = 'John Doe';
+```
+
+Este comando recupera o nome do usuário e o total de todas as ordens associadas a esse usuário, combinando as tabelas `users` e `orders` com base na coluna `id` da tabela `users` e na coluna `user_id` da tabela `orders`, onde o nome do usuário é "John Doe".
+
+### `SELECT FROM LEFT JOIN ON`
+
+```sql
+SELECT users.name, orders.total
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id;
+```
+
+Este comando recupera o nome do usuário e o total de todas as ordens associadas a esse usuário, combinando as tabelas `users` e `orders` com base na coluna `id` da tabela `users` e na coluna `user_id` da tabela `orders`, incluindo todos os usuários, mesmo que eles não tenham ordens associadas.
+
+### `SELECT FROM RIGHT JOIN ON`
+
+```sql
+SELECT users.name, orders.total
+FROM users
+RIGHT JOIN orders ON users.id = orders.user_id;
+```
+
+Este comando recupera o nome do usuário e o total de todas as ordens associadas a esse usuário, combinando as tabelas `users` e `orders` com base na coluna `id` da tabela `users` e na coluna `user_id` da tabela `orders`, incluindo todas as ordens, mesmo que elas não tenham usuários associados.
+
 ## Tabelas
 
 ### `CREATE TABLE`

@@ -3,9 +3,10 @@
 ## Commands
 
 ```bash
-connect                        Connect to the Postgres database
 clean                          Stop and remove containers
+connect                        Connect to the Postgres database
 help                           Show help
+sql                            Run scripts/insert_users_and_orders.sql script
 up                             Run Postgres on port 5432 and Adminer on port 5433
 ```
 
@@ -31,6 +32,17 @@ CREATE TABLE students (
 );
 ```
 
+Or you may also insert data into the table by running:
+
+```bash
+psql --username=user --dbname=db -f /scripts/insert_users_and_orders.sql
+```
+
+```bash
+psql --username=user --dbname=db -c "SELECT * FROM users;"
+```
+
+
 Then you may validate the table creation by running:
 
 ```sql
@@ -38,7 +50,6 @@ Then you may validate the table creation by running:
 ```
 
 or by accessing the [Adminer interface](http://localhost:5433).
-
 
 ## [Adminer](http://localhost:5433)
 

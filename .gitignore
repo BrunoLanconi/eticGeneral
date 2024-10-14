@@ -1,2 +1,3 @@
 .vscode/settings.json
 Database/utils/postgres/data/
+__pycache__
