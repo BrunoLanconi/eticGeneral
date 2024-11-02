@@ -9,9 +9,9 @@ connect: ## Connect to the Postgres database
 	docker compose exec -it db psql --username=user --dbname=db
 	
 clean: ## Stop and remove containers
-	docker compose down
-	docker rm -f postgres-db-1
-	docker volume rm postgres_data
+	docker compose down --volumes
 
 sql: ## Run scripts/insert_users_and_orders.sql script
 	docker compose exec db psql --username=user --dbname=db -f /scripts/insert_users_and_orders.sql
+
+restart: clean up ## Restart the containers

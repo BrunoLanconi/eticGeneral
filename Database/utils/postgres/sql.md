@@ -1,4 +1,4 @@
-## Valores
+## SQL
 
 ### `INSERT INTO VALUES`
 ```sql

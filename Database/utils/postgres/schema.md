@@ -1,4 +1,4 @@
-## **Schemas**
+## Schema
 
 São uma maneira de organizar e agrupar objetos dentro de um banco de dados, como tabelas, views, índices, funções e outros. Eles funcionam como uma camada de organização para os objetos do banco de dados, permitindo a separação lógica entre diferentes conjuntos de dados e funcionalidades.
 

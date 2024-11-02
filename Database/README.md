@@ -4,10 +4,11 @@ Este ficheiro contém informações gerais sobre bases de dados.
 
 ## Conteúdo
 
-- `images/`: Imagens usadas nos ficheiros.
-- `lab/`: Laboratório de SQLAlchemy e Alembic.
-- `utils/`: Ficheiros de utilidade.
+- `README.md`: Este ficheiro.
 - `concepts.md`: Conceitos básicos de bases de dados.
 - `entity_relation_diagram.md`: Conceitos de diagrama de entidade-relação.
+- `images/`: Imagens usadas nos ficheiros.
+- `lab/`: Laboratório de SQLAlchemy e Alembic.
 - `memory.md`: Comparação/paralelo com memória.
-- `README.md`: Este ficheiro.
+- `projects/`: Projetos de bases de dados.
+- `utils/`: Ficheiros de utilidade.
