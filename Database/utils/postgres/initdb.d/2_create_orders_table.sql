@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS orders;
+
+CREATE TABLE IF NOT EXISTS orders
+(
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  total DECIMAL(10, 2)
+);

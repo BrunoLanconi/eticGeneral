@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["N"]
+readme = "README.md"
+packages = [{ include = "./src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10.12"
+psycopg2-binary = "^2.9.10"
+sqlalchemy = "^2.0.36"
+pydantic = "^2.9.2"
+pydantic-settings = "^2.6.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+ruff = "^0.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

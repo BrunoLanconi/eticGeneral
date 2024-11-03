@@ -1,0 +1,44 @@
+services:
+  poetry:
+    build:
+      context: .
+      dockerfile: ops/poetry.Dockerfile
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: db
+      POSTGRES_HOST: database
+      POSTGRES_PORT: 5432
+    networks:
+      - poetry-network
+
+  database:
+    image: postgres
+    restart: always
+    volumes:
+      - data:/var/lib/postgresql/data
+      - ./ops/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: db
+    networks:
+      - poetry-network
+
+  adminer:
+    image: adminer
+    restart: always
+    links:
+      - database:db
+    ports:
+      - 5433:8080
+    networks:
+      - poetry-network
+    
+
+volumes:
+  data:
+
+networks:
+  poetry-network:
+    driver: bridge

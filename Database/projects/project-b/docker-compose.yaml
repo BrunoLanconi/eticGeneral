@@ -1,0 +1,49 @@
+services:
+  database:
+    image: postgres
+    restart: always
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: db
+    networks:
+      - app-network
+
+  django-app:
+    build:
+      context: ./django-app
+      dockerfile: ../ops/django-app.Dockerfile
+    ports:
+      - 8000:8000
+    command: bash -c "poetry run python manage.py migrate && poetry run gunicorn -w 20 -b 0.0.0.0:8000 setup.wsgi"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: db
+      POSTGRES_HOST: database
+      POSTGRES_PORT: 5432
+    networks:
+      - app-network
+    depends_on:
+      - database
+
+  adminer:
+    image: adminer
+    restart: always
+    links:
+      - database:db
+    ports:
+      - 5433:8080
+    networks:
+      - app-network
+    depends_on:
+      - database
+
+volumes:
+  data:
+
+networks:
+  app-network:
+    driver: bridge
