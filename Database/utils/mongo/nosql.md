@@ -16,6 +16,14 @@ O MongoDB armazena dados em **coleções**. Uma coleção é um grupo de documen
 
 ## MongoDB Shell (mongosh)
 
+### 'use<db>'
+''' javascript
+use myNewDatabase
+db.myCollection.insertOne( { x: 1 } );
+'''
+
+Este comando cria um banco de dados diferentes e cria uma coleção a nova base de dados.
+
 ### `<database>.<collection>.insertOne()`
 ```javascript
 db.users.insertOne({ name: "John Doe", email: "john.doe@example.com" });
@@ -29,6 +37,21 @@ Este comando insere um novo documento na coleção `users` com o nome "John Doe"
 
 - `acknowledged`: Indica se a operação foi bem-sucedida.
 - `insertedId`: ID do documento inserido.
+
+### '<database>.<collection>.insertMany()'
+''' javascript
+db.movie.inserMany([
+    {
+      title: "Jurassic World: Fallen Kingdom",
+      genres: [ "Action", "Sci-Fi" ],
+    },
+    {
+      title: "Tag",
+      genres: [ "Comedy", "Action" ],
+    }
+])
+
+Este comando pode adicionar varios documentos em uma coleção enquanto o insertOne() so permitir inserir um unico documento numa coleção.
 
 ### `<database>.<collection>.find()`
 ```javascript
@@ -66,6 +89,17 @@ Este comando atualiza o email de "John Doe" para "john.newemail@example.com" na 
 - `acknowledged`: Indica se a operação foi bem-sucedida.
 - `matchedCount`: Número de documentos correspondentes.
 - `modifiedCount`: Número de documentos modificados.
+
+
+###'<database>.<collection>.<replaceOne()>'
+'''javascript
+db.accounts.replaceOne(
+  { account_id: 371138 },
+  { account_id: 893421, limit: 5000, products: [ "Investment", "Brokerage" ] }
+)
+'''
+
+Este comando permite substituir o conteudo de um documento exceto o campo id.
 
 ### `<database>.<collection>.deleteOne()`
 ```javascript
