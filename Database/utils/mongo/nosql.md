@@ -11,7 +11,7 @@ O MongoDB armazena dados em **coleções**. Uma coleção é um grupo de documen
 - **Documento**: Instância de um tipo de dados BSON.
 - **Campo**: Par chave-valor em um documento.
 - **Chave**: Nome do campo em um documento.
-- **Valor**: Dado associado a uma chave em um documento.
+- **Valor**: Dado associado a uma chave.
 
 
 ## MongoDB Shell (mongosh)
@@ -39,6 +39,25 @@ Este comando recupera todos os documentos da coleção `users` onde o email é i
 
 ```json
 { "_id": ObjectId("5f5f7b3b3f3b9b1b3f3b9b1b"), "name": "John Doe", "email": "john.doe@example.com" }
+
+### `<database>.<collection>.insertMany()`
+'''javascript
+db.users.insertMany([
+  { name: "Miguel", email: "miguel@example.com" },
+  { name: "Nuno", email: "nuno@example.com" }
+]);
+```
+
+Este comando insere vários documentos na coleção `users` com o nome "Miguel" e o email miguel@example.com; tal como o nome "Nuno" e o email nuno@example.com. Retorna:
+```json
+{ 
+  "acknowledged": true, 
+  "insertedIds": {
+    "0": ObjectId("64f93b3b3f3b9b1b3f3b9b1c"), 
+    "1": ObjectId("64f93b3b3f3b9b1b3f3b9b1d")
+  }
+}
+
 ```
 
 #### `<database>.<collection>.find().limit()` 
@@ -51,6 +70,26 @@ Este comando recupera apenas um documento da coleção `users` onde o email é i
 ```json
 { "_id": ObjectId("5f5f7b3b3f3b9b1b3f3b9b1b"), "name": "John Doe", "email": "john.doe@example.com" }
 ```
+
+#### `<database>.<collection>.findOne()` 
+```javascript
+db.users.findOne({ email: "miguel@example.com" });
+```
+
+Este comando retorna o primeiro documento que ele encontrar na collection que corresponda com o campo email. Retorna:
+
+```json
+{ 
+  "_id": ObjectId("64f93b3b3f3b9b1b3f3b9b1b"),
+  "name": "Miguel", 
+  "email": "miguel@example.com"
+}
+
+
+```
+
+
+
 
 ### `<database>.<collection>.updateOne()`
 ```javascript
