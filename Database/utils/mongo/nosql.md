@@ -40,6 +40,7 @@ Este comando recupera todos os documentos da coleção `users` onde o email é i
 ```json
 { "_id": ObjectId("5f5f7b3b3f3b9b1b3f3b9b1b"), "name": "John Doe", "email": "john.doe@example.com" }
 ```
+
 #### `<database>.<collection>.find().sort({<propriedade> : <1/-1>})`
 
 Este comando vai ordenar objetos encontrados, de forma crescente ou decrescente pela <propriedade>, 1 = crescente e -1 decrescente 
