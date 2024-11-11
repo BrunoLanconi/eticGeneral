@@ -178,10 +178,14 @@ Este comando renomeia o índice `idx_users_email` para `index_users_email`. Reto
 ```json
 { "createdCollectionAutomatically": false, "numIndexesBefore": 1, "numIndexesAfter": 1, "ok": 1 }
 ```
-
+Este comando esconde o índice 'idx_users_email'
 ### `<database>.<collection>.dropIndex()`
 ```javascript
-db.users.dropIndex("idx_users_email");
+db.users.getIndexes().forEach(index => {
+  if (index.name === "idx_users_email") {
+    db.users.updateIndex("idx_users_email", { hidden:true});
+  }
+});
 ```
 
 Este comando remove o índice `idx_users_email` da coleção `users`. Retorna:
