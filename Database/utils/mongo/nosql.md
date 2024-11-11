@@ -66,13 +66,15 @@ Este comando atualiza o email de "John Doe" para "john.newemail@example.com" na 
 - `acknowledged`: Indica se a operação foi bem-sucedida.
 - `matchedCount`: Número de documentos correspondentes.
 - `modifiedCount`: Número de documentos modificados.
+- `upsertId`: Contém o ID do documento atualizado ou inserido.
+- `upsertedCount`: Número de documentos inseridos.
 
 ### `<database>.<collection>.deleteOne()`
 ```javascript
 db.users.deleteOne({ name: "John Doe" });
 ```
 
-Este comando remove todos os documentos que têm o campo `name` igual a "John Doe" da coleção `users`. Retorna:
+Este comando remove um único documento que têm o campo `name` igual a "John Doe" da coleção `users`. Retorna:
 
 ```json
 { "acknowledged": true, "deletedCount": 1 }
