@@ -41,6 +41,18 @@ Este comando recupera todos os documentos da coleção `users` onde o email é i
 { "_id": ObjectId("5f5f7b3b3f3b9b1b3f3b9b1b"), "name": "John Doe", "email": "john.doe@example.com" }
 ```
 
+#### `<database>.<collection>.find().sort({<propriedade> : <1/-1>})`
+
+Este comando vai ordenar objetos encontrados, de forma crescente ou decrescente pela <propriedade>, 1 = crescente e -1 decrescente 
+
+```javascript
+[
+  { _id: ObjectId('67326f716932ad6096fe6911'), name: 'nome teste' },
+  { _id: ObjectId('67326fdf6932ad6096fe6912'), name: 'nome teste2' },
+  { _id: ObjectId('67326fdf6932ad6096fe6913'), name: 'teste3' }
+]
+```
+
 #### `<database>.<collection>.find().limit()` 
 ```javascript
 db.users.find({ email: "john.doe@example.com" }).limit(1);
