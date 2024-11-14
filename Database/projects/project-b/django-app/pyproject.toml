@@ -3,7 +3,11 @@ name = "django-app"
 version = "0.1.0"
 description = ""
 authors = ["Bruno Lançoni <services@brunolanconi.com.br>"]
-packages = [{include = "./setup"}]
+packages = [
+  {include = "./setup"},
+  {include = "./sample"},
+  {include = "./mongo"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -11,7 +15,15 @@ django = "^5.1.2"
 python-decouple = "^3.8"
 psycopg = {extras = ["binary"], version = "^3.2.3"}
 gunicorn = "^23.0.0"
+pymongo = "^4.10.1"
+pydantic = "^2.9.2"
+djangorestframework = "^3.15.2"
+markdown = "^3.7"
+django-filter = "^24.3"
 
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.3"
 
 [build-system]
 requires = ["poetry-core"]
