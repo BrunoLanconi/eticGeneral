@@ -13,3 +13,13 @@ class Sample(BaseModel):
 
 class Samples(RootModel):
     root: list[Sample]
+
+
+class Comment(BaseModel):
+    content: str
+    author: str
+    phrase_id: int
+
+
+class Comments(RootModel):
+    root: list[Comment]

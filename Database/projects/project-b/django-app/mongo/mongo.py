@@ -1,6 +1,6 @@
 from urllib.parse import quote_plus
 from django.conf import settings
-from mongo.models import Sample
+from mongo.models import Comment, Sample
 from pymongo import MongoClient
 
 
@@ -39,3 +39,11 @@ class Mongo:
                 return None
 
             return Sample(**sample)
+
+    def get_comments(self, phrase_id: int) -> list[Comment]:
+        with MongoClient(self.uri) as client:
+            db = client.get_database(self.default_database)
+            collection = db.get_collection("comments")
+            comments = collection.find({"phrase_id": phrase_id})
+
+            return [Comment(**comment) for comment in comments]
