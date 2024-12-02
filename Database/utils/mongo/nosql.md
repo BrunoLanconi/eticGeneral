@@ -189,3 +189,43 @@ Este comando remove o índice `idx_users_email` da coleção `users`. Retorna:
 ```json
 { "nIndexesWas": 2, "ok": 1 }
 ```
+
+### `<database>.<collection>.insertMany()`
+```javascript
+db.users.insertMany( [
+   { _id: 1, category: "café", status: "a tomar" },
+   { _id: 2, category: "café", status: "a encher chouriço" },
+   { _id: 3, category: "café", status: "a arrefecer o café" }
+] )
+
+```
+Este comando insere vários documentos na coleção `users`. Retorna:
+```json
+{
+   "acknowledged" : true,
+   "insertedIds" : [
+      ObjectId("562a94d381cb9f1cd6eb0e1a"),
+      ObjectId("562a94d381cb9f1cd6eb0e1b"),
+      ObjectId("562a94d381cb9f1cd6eb0e1c")
+   ]
+}
+```
+
+### `<database>.<collection>.updateMany()`
+```javascript
+db.users.updateMany(
+  { violations: { $gt: 4 } },
+  { $set: { "Review" : true } }
+);
+```
+Este comando atualiza vários documentos na coleção `users`. Retorna:
+
+```json
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+```
+
+### `<database>.<collection>.hideIndex()`
+```javascript
+db.users.hideIndex("id_1_top_10");
+```
+Este comando esconde um documento na coleção `users`.
