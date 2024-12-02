@@ -6,7 +6,7 @@ O **noSQL** é um termo genérico que se refere a qualquer banco de dados que n�
 
 O MongoDB armazena dados em **coleções**. Uma coleção é um grupo de documentos BSON. Um **documento** é um conjunto de pares de chave-valor. Cada documento é uma instância de um **tipo de dados BSON**.
 
-- **Base de Dados**: Contêiner de coleções.
+- **Base de Dados**: Container de coleções.
 - **Coleção**: Grupo de documentos.
 - **Documento**: Instância de um tipo de dados BSON.
 - **Campo**: Par chave-valor em um documento.
@@ -189,3 +189,95 @@ Este comando remove o índice `idx_users_email` da coleção `users`. Retorna:
 ```json
 { "nIndexesWas": 2, "ok": 1 }
 ```
+
+## Backup with mongodump
+
+  mongodump is used to create a binary backup of a MongoDB database or collection. It saves data as BSON files, which are efficient for storage and easy to restore.
+
+bash
+# Backup an entire database
+mongodump --db mydatabase --out /path/to/backup/
+
+# Backup a specific collection
+mongodump --db mydatabase --collection mycollection --out /path/to/backup/
+
+# Backup with authentication (if your MongoDB requires it)
+  This will create a folder structure at /path/to/backup/ containing BSON files for each collection in the specified database.
+
+´´´
+mongodump --host localhost --port 27017 --username myUser --password myPassword --authenticationDatabase admin --db mydatabase --out /path/to/backup/
+´´´
+
+## Restore with mongorestore
+mongorestore restores data from BSON files created by mongodump.
+
+bash
+# Restore the entire database from a backup
+mongorestore --db mydatabase /path/to/backup/mydatabase/
+
+# Restore a specific collection
+mongorestore --db mydatabase --collection mycollection /path/to/backup/mydatabase/mycollection.bson
+
+# Restore with authentication
+'''
+mongorestore --host localhost --port 27017 --username myUser --password myPassword --authenticationDatabase admin --db mydatabase /path/to/backup/mydatabase/
+'''
+
+These commands will populate mydatabase (or specific collections) with the data from the backup files.
+
+## Database Statistics with db.stats()
+  The db.stats() command provides various statistics about the database, such as storage size, collection count, and data size. This is useful for monitoring database usage and performance.
+
+javascript
+
+use mydatabase;
+db.stats();
+Sample Output:
+json
+Copiar código
+{
+  "db": "mydatabase",
+  "collections": 5,
+  "views": 0,
+  "objects": 320,
+  "avgObjSize": 54.12,
+  "dataSize": 17318,
+  "storageSize": 32768,
+  "indexes": 2,
+  "indexSize": 8192,
+  ...
+}
+This output provides metrics on data size, average object size, storage size, index count, and index size, helping administrators optimize database resources.
+
+
+## Check Collection Statistics with db.collection.stats()
+  db.collection.stats() gives information about a specific collection, including document count, index size, and average document size.
+  '''
+
+use mydatabase;
+db.mycollection.stats();
+Sample Output:
+json
+Copiar código
+{
+  "ns": "mydatabase.mycollection",
+  "count": 500,
+  "size": 12000,
+  "avgObjSize": 24,
+  "storageSize": 16384,
+  "totalIndexSize": 4096,
+  ...
+}
+'''
+
+## Database Repair with db.repairDatabase()
+  db.repairDatabase() is used to attempt repair of a corrupted database. It’s important to back up data first, as this operation can sometimes result in data loss.
+
+'''
+use mydatabase;
+db.repairDatabase();
+'''
+
+This operation scans the database for inconsistencies and attempts to fix any it encounters. However, it can be time-consuming and requires sufficient disk space to complete.
+
+
