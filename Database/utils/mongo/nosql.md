@@ -189,3 +189,15 @@ Este comando remove o índice `idx_users_email` da coleção `users`. Retorna:
 ```json
 { "nIndexesWas": 2, "ok": 1 }
 ```
+
+### `<database>.<collection>.remove()`
+
+```javascript
+db.collection.remove(
+    <query>,
+    <justOne>
+)
+
+```
+Por padrão, o remove() remove todos os documentos que correspondem à expressão query. Especifique a opção justOne para limitar a operação para remover um único documento. Para excluir um único documento classificado por uma ordem especificada, use o método findAndModify().
+
