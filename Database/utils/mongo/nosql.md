@@ -183,9 +183,27 @@ Este comando renomeia o índice `idx_users_email` para `index_users_email`. Reto
 ```javascript
 db.users.dropIndex("idx_users_email");
 ```
+Remove o índice especificado de uma coleção.
+
+| Syntax      | Descrição     |
+| :---        |          ---: |
+| db.      | Base de dados afeta   |
+| users.   |  Especificação de coleção      |
+| dropIndex   | Método a ser chamado      |
+| ("idx_users_email")   | Índice a ser removido      |
+
+
+
+De forma a remover todos os índices que **não sejam o id padrão** não é possivel utilizar:
+
+`db.collection.dropIndex("*")`
+
+Para o efeito utilize:
+
+`db.collection.dropIndexes()` 
 
 Este comando remove o índice `idx_users_email` da coleção `users`. Retorna:
 
 ```json
 { "nIndexesWas": 2, "ok": 1 }
-```
+``` 
