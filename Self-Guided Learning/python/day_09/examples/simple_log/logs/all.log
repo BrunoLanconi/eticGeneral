@@ -1,0 +1,5 @@
+2024-08-14 16:32:46,804 - __main__ - DEBUG - This message goes to all.log
+2024-08-14 16:32:46,804 - __main__ - INFO - This message goes to all.log
+2024-08-14 16:32:46,804 - __main__ - WARNING - This message goes to all.log
+2024-08-14 16:32:46,804 - __main__ - ERROR - This message goes to all.log and error.log
+2024-08-14 16:32:46,804 - __main__ - CRITICAL - This message goes to all.log and error.log

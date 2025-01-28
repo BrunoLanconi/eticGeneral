@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "docker"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "./src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.7"
+fastapi = "^0.111.0"
+flask = "^3.0.3"
+click = "^8.1.7"
+uvicorn = "^0.30.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+ruff = "^0.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

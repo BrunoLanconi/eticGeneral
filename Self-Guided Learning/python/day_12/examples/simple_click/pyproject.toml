@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "simple_click"
+version = "0.1.0"
+description = "A sample project."
+authors = ["Bruno Lançoni Neto <bruno.lanconi.neto@devoteam.com>"]
+packages = [{ include = "./src/" }, { include = "./tests/" }]
+
+[tool.poetry.scripts]
+simple_click = "src.cli.commands:simple_click"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.3"
+pdoc = "^12.0.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+pytest = "^8.3.2"
+pytest-click = "^1.1.0"
+ruff = "^0.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

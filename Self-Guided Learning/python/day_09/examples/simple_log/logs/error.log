@@ -1,0 +1,2 @@
+2024-08-14 16:32:46,804 - __main__ - ERROR - This message goes to all.log and error.log
+2024-08-14 16:32:46,804 - __main__ - CRITICAL - This message goes to all.log and error.log

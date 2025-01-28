@@ -1,0 +1,75 @@
+# This is a snippet of a docker-compose.yaml file, which is used to define and configure multiple 
+# Docker containers that work together as a service. In this case, the file defines two services: app and postgres.
+
+# The app service is defined with the following properties:
+
+# build: 
+# Specifies the build configuration for the service. It specifies the context directory (./app) 
+# and the Dockerfile to use (Dockerfile) for building the image.
+
+# command: 
+# Specifies the command to run when the container starts. In this case, it runs the uvicorn server 
+# with the src.app:app module as the entry point, listening on 0.0.0.0:8000.
+
+# environment: 
+# Sets environment variables for the container. Here, it sets 
+# the POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB, and POSTGRES_HOST variables for the application 
+# to connect to the postgres service.
+
+# ports: 
+# Maps the container's port 8000 to the host's port 8000, allowing access to the application from the host machine.
+
+# volumes: 
+# Mounts the ./app directory from the host machine to the /app directory inside the container, 
+# allowing live code reloading during development.
+
+# networks: 
+# Specifies the network to connect the container to. In this case, it connects to the app-network network.
+
+# depends_on: 
+# Specifies that the app service depends on the postgres service, ensuring that the postgres service 
+# is started before the app service.
+
+# The postgres service is defined similarly, with its own build configuration, environment variables, 
+# ports, volumes, and network configuration.
+
+# At the end of the file, the app-network network is defined with the driver property set to bridge, 
+# indicating that it uses the default bridge network driver.
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    command: poetry run uvicorn src.app:app --host 0.0.0.0 --port 8000
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_HOST: postgres
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    networks:
+      - app-network
+    depends_on:
+      - postgres
+
+  postgres:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

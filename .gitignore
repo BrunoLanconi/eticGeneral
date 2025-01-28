@@ -3,3 +3,13 @@ Database/utils/postgres/data/
 __pycache__
 db.sqlite3
 
+# VSCode
+.ruff_cache/
+
+# Virtual environments
+python/day_01/examples/venv_example/myenv/*
+
+# Jupyter Notebook checkpoints
+python/day_01/lab_03/.ipynb_checkpoints/*
+python/day_08/examples/simple_django/static
+*db.sqlite3

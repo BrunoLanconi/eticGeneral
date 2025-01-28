@@ -1,0 +1,8 @@
+services:
+  my-nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["run"]
+    expose:
+      - 8080
