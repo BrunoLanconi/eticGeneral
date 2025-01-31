@@ -32,6 +32,16 @@ To stop the application, you can use the `docker compose down` command. This com
 
 ---
 
+## Concatenating Multiple Compose Files
+
+You can use the `-f` flag to specify multiple `docker-compose.yaml` files to concatenate. This is useful when you want to split your configuration into multiple files.
+
+```bash
+docker compose -f docker-compose.yaml -f docker-compose.prod.yaml up
+```
+
+---
+
 ## Useful Commands and Flags
 
 Mostly of `docker compose <command>` commands are similar to `docker <command>` commands - with the addition of the `compose` keyword and the use of the service name instead of the container ID.
