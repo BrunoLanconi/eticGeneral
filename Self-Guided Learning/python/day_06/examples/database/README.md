@@ -204,6 +204,8 @@ class User(Base):
 
 In the `User` model class, we define the structure of the `users` table in the database. The `User` class inherits from the `Base` class, which ensures that the model is compatible with Alembic migrations. We define two attributes: `id` and `name`, which represent the unique identifier and name of the user, respectively.
 
+The `mapped_column` function is used to define the columns in the database table. This function provides a more explicit way to define mapped attributes and is the recommended approach in SQLAlchemy 2.0 and later. A mapped attribute is an attribute of a mapped class that corresponds to a column in the database table. When we say that an attribute is "mapped," we mean that it is associated with a specific column in the database table, allowing SQLAlchemy to handle the conversion between Python objects and database records seamlessly. The object `Mapped` is a generic type that indicates the type of the mapped attribute.
+
 Now that we have defined the models and the database class, we can use Alembic to manage the database schema and migrations. If this is your first time running Alembic, you will need to initialize the Alembic environment by running the following command in the terminal on the root directory of your project:
 
 ### Example
