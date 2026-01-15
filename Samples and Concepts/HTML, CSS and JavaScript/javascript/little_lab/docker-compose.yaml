@@ -1,0 +1,10 @@
+services:
+  little_lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: little_lab
+    tty: true
+    volumes:
+      - .:/app
+    command: bash
