@@ -1,123 +1,136 @@
-1. **AND Lógico (`&&`):**
-   - Retorna `true` se ambos os operandos forem `true`.
+## Operadores Lógicos
 
-   ```javascript
-   if (condicao1 && condicao2) {
-     // Código a ser executado se ambas as condições forem verdadeiras
-   }
-   ```
+### AND (`&&`)
 
-2. **OR Lógico (`||`):**
-   - Retorna `true` se pelo menos um dos operandos for `true`.
+Retorna `true` se ambos os operandos forem `true`.
 
-   ```javascript
-   if (condicao1 || condicao2) {
-     // Código a ser executado se pelo menos uma condição for verdadeira
-   }
-   ```
+```javascript
+if (condicao1 && condicao2) {
+   // executa se ambas forem verdadeiras
+}
+```
 
-3. **NOT Lógico (`!`):**
-   - Inverte o valor de verdadeiro para falso e vice-versa.
- 
-   ```javascript
-   if (!condicao) {
-     // Código a ser executado se a condição for falsa
-   }
-   ```
+---
 
-4. **Operador Ternário (`? :`):**
-   - Uma forma concisa de expressar uma condição. É uma versão abreviada de um bloco `if-else`.
- 
-   ```javascript
-   var resultado = condicao ? valorSeVerdadeiro : valorSeFalso;
-   ```
+### OR (`||`)
 
-5. **Operador de Igualdade Estrita (`===`):**
-   - Retorna `true` se os operandos forem iguais em valor e tipo.
-  
-   ```javascript
-   if (valor1 === valor2) {
-     // Código a ser executado se os valores e tipos forem iguais
-   }
-   ```
+Retorna `true` se pelo menos um dos operandos for `true`.
 
-6. **Operador de Desigualdade Estrita (`!==`):**
-   - Retorna `true` se os operandos não forem iguais em valor ou tipo.
-  
-   ```javascript
-   if (valor1 !== valor2) {
-     // Código a ser executado se os valores ou tipos não forem iguais
-   }
-   ```
+```javascript
+if (condicao1 || condicao2) {
+   // executa se pelo menos uma for verdadeira
+}
+```
 
-7. **Igual (`==`):**
-   - Retorna `true` se os operandos são iguais em valor, mas não necessariamente do mesmo tipo.
- 
-   ```javascript
-   if (valor1 == valor2) {
-     // Código a ser executado se os valores forem iguais
-   }
-   ```
+---
 
-8. **Igualdade Estrita (`===`):**
-   - Retorna `true` se os operandos são iguais em valor e tipo.
- 
-   ```javascript
-   if (valor1 === valor2) {
-     // Código a ser executado se os valores e tipos forem iguais
-   }
-   ```
+### NOT (`!`)
 
-9. **Diferente (`!=`):**
-   - Retorna `true` se os operandos não são iguais em valor, sem considerar o tipo.
- 
-   ```javascript
-   if (valor1 != valor2) {
-     // Código a ser executado se os valores forem diferentes
-   }
-   ```
+Inverte o valor booleano (verdadeiro ↔ falso).
 
-10. **Diferença Estrita (`!==`):**
-   - Retorna `true` se os operandos não são iguais em valor ou tipo.
-  
-   ```javascript
-   if (valor1 !== valor2) {
-     // Código a ser executado se os valores ou tipos forem diferentes
-   }
-   ```
+```javascript
+if (!condicao) {
+   // executa se a condição for falsa
+}
+```
 
-11. **Menor que (`<`):**
-   - Retorna `true` se o operando da esquerda for menor que o operando da direita.
-  
-   ```javascript
-   if (valor1 < valor2) {
-     // Código a ser executado se valor1 for menor que valor2
-   }
-   ```
+---
 
-12. **Maior que (`>`):**
-   - Retorna `true` se o operando da esquerda for maior que o operando da direita.
-  
-   ```javascript
-   if (valor1 > valor2) {
-     // Código a ser executado se valor1 for maior que valor2
-   }
-   ```
+## Operador Ternário (`? :`)
 
-13. **Menor ou Igual a (`<=`):**
-   - Retorna `true` se o operando da esquerda for menor ou igual ao operando da direita.
-  
-   ```javascript
-   if (valor1 <= valor2) {
-     // Código a ser executado se valor1 for menor ou igual a valor2
-   }
-   ```
+Uma forma concisa de expressar uma condição (atalho de `if/else`).
 
-14. **Maior ou Igual a (`>=`):**
-   - Retorna `true` se o operando da esquerda for maior ou igual ao operando da direita.
-  
-   ```javascript
-   if (valor1 >= valor2) {
-     // Código a ser executado se valor1 for maior ou igual a valor2
-   }
-   ```
+```javascript
+const resultado = condicao ? valorSeVerdadeiro : valorSeFalso;
+```
+
+---
+
+## Igualdade
+
+### Igualdade “solta” (`==`) vs igualdade estrita (`===`)
+
+- `==` pode fazer conversões de tipo (coerção).
+- `===` compara valor e tipo (recomendado na maioria dos casos).
+
+```javascript
+console.log(1 == "1");   // true
+console.log(1 === "1");  // false
+```
+
+---
+
+### Diferença “solta” (`!=`) vs diferença estrita (`!==`)
+
+```javascript
+console.log(0 != false);   // false
+console.log(0 !== false);  // true
+```
+
+---
+
+## Comparação
+
+### Menor/maior
+
+```javascript
+console.log(2 < 3);   // true
+console.log(3 > 2);   // true
+console.log(3 <= 3);  // true
+console.log(4 >= 5);  // false
+```
+
+---
+
+## Operadores Numéricos (aritmética)
+
+```javascript
+console.log(10 + 3);
+console.log(10 - 3);
+console.log(10 * 3);
+console.log(10 / 3);
+console.log(10 % 3);
+console.log(2 ** 3);
+```
+
+---
+
+## Atribuição
+
+```javascript
+let x = 10;
+x += 5;
+x *= 2;
+console.log(x);
+```
+
+Use `let` ou `const` para declarar variáveis.
+
+- `let` permite reatribuição.
+- `const` cria uma constante (não pode ser reatribuída).
+
+Em ambos os casos, o escopo é de bloco (`{ ... }`). Isto significa que a variável só existe dentro do bloco onde foi declarada. Por exemplo:
+
+```javascript
+if (true) {
+   let a = 5;
+   const b = 10;
+   console.log(a + b); // 15
+}
+// console.log(a); // Erro: a não está definido
+// console.log(b); // Erro: b não está definido
+```
+
+---
+
+## Operador de Coalescência Nula (`??`)
+
+Usa o valor da direita apenas quando o da esquerda é `null` ou `undefined`.
+
+```javascript
+const input = "";
+console.log(input ?? "default"); // "" (não troca)
+
+const maybeNull = null;
+console.log(maybeNull ?? "default"); // "default"
+```
